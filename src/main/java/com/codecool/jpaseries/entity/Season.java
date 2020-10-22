@@ -18,6 +18,8 @@ public class Season {
     private Long id;
     private Integer numberOfSeason;
     private LocalDate releaseDate;
+    @Singular
     @OneToMany(mappedBy = "season", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    @EqualsAndHashCode.Exclude
     private Set<Episode> episodes;
 }
