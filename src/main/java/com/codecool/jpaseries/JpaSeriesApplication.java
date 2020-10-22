@@ -32,6 +32,7 @@ public class JpaSeriesApplication {
     public CommandLineRunner init(){
         Set<Episode> episodeSet = new HashSet<>();
         Set<Season> seasonSet = new HashSet<>();
+
         return args -> {
             Episode episode = Episode.builder()
                     .name("one")
