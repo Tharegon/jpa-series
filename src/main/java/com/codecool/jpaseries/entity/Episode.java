@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.time.LocalDate;
 
 @Getter
 @Setter
@@ -19,4 +20,6 @@ public class Episode {
     @GeneratedValue
     private Long id;
     private String name;
+    private Integer part;
+    private LocalDate releaseDate;
 }
