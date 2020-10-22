@@ -20,7 +20,6 @@ import java.util.Set;
 @SpringBootApplication
 public class JpaSeriesApplication {
 
-
     @Autowired
     private SeriesRepository seriesRepository;
 
@@ -31,7 +30,6 @@ public class JpaSeriesApplication {
     @Bean
     public CommandLineRunner init(){
         Set<Episode> episodeSet = new HashSet<>();
-        Set<Season> seasonSet = new HashSet<>();
 
         return args -> {
             Episode episode = Episode.builder()
@@ -53,7 +51,7 @@ public class JpaSeriesApplication {
                     .numberOfSeason(1)
                     .releaseDate(LocalDate.of(2020,10,22))
                     .episodes(episodeSet).build();
-            seasonSet.add(season);
+
 
             episode.setSeason(season);
             episode2.setSeason(season);
