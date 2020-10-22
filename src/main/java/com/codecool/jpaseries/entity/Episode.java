@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import java.time.LocalDate;
 
 @Getter
@@ -22,4 +23,6 @@ public class Episode {
     private String name;
     private Integer part;
     private LocalDate releaseDate;
+    @ManyToOne
+    private Season season;
 }
