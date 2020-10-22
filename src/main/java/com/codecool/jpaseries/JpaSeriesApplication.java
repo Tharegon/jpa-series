@@ -12,6 +12,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Profile;
+import org.springframework.test.context.ActiveProfiles;
 
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -28,18 +30,24 @@ public class JpaSeriesApplication {
     }
 
     @Bean
+    @Profile("production")
     public CommandLineRunner init(){
         Set<Episode> episodeSet = new HashSet<>();
 
         return args -> {
             Episode episode = Episode.builder()
                     .name("one")
+                    .actor("Robert")
+                    .actor("Anita")
+                    .likes(43)
                     .part(1)
                     .releaseDate(LocalDate.of(2020,10,22))
                     .build();
 
             Episode episode2 = Episode.builder()
                     .name("two")
+                    .actor("Pista")
+                    .likes(21)
                     .part(2)
                     .releaseDate(LocalDate.of(2020,10,23))
                     .build();
